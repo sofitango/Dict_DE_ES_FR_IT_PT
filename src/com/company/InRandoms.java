@@ -1,3 +1,5 @@
+package com.company;
+
 import com.company.dicts.*;
 import java.util.Scanner;
 import java.util.Random;
