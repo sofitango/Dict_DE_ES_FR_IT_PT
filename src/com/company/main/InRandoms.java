@@ -1,4 +1,4 @@
-package com.company;
+package com.company.main;
 
 import com.company.dicts.*;
 import java.util.Scanner;
@@ -40,10 +40,13 @@ public class InRandoms{
 
             if(getInput.matches("[+-]?\\d*(\\.\\d+)?")){
                 int counter = Integer.parseInt(getInput);
+
                 if(counter>dictSrcDes.size()){
                     System.out.println("Wow, that\'s a lot, but the mini dictionary has only " + dictSrcDes.size() + " word pairs.");
                     System.out.println("Try less or try to add more words in the dictionary.");
+
                 } else randomTestLoopEng(dictSrcDes, counter);
+
             } else {
                 randomTestNormalEng(dictSrcDes);
             }
@@ -56,10 +59,13 @@ public class InRandoms{
 
             if(getInput.matches("[+-]?\\d*(\\.\\d+)?")){
                 int counter = Integer.parseInt(getInput);
+
                 if(counter>dictSrcDes.size()){
                     System.out.println("Wow, that\'s huge. The mini dictionary contains only " + dictSrcDes.size() + " word pairs now.");
                     System.out.println("Try less or try to add more words in the dictionary.");
+
                 } else randomTestLoopOth(dictSrcDes, counter);
+
             } else {
                 randomTestNormalOth(dictSrcDes);
             }
@@ -92,12 +98,15 @@ public class InRandoms{
                 System.out.println(("Please type the word \"") + valWord + ("\" in English"));
                 Scanner sc = new Scanner(System.in);
                 String inpWord = sc.nextLine();
+
                 if(inpWord.equalsIgnoreCase(keyWord)){
                     System.out.println("Excellent! That\'s correct!");
+
                     correctWord++;
                 } else if(!inpWord.equalsIgnoreCase(keyWord)){
                     System.out.println("What a pity! But you are wrong!");
                     System.out.println("The correct English word for \"" + valWord + "\" is: " + keyWord);
+
                 } else {
                     System.out.println("What happends?");
                 }
@@ -135,9 +144,11 @@ public class InRandoms{
 
             if(wordTyped.equalsIgnoreCase(wordEng)){
                 System.out.println("Excelent! You are correct!");
+
             } else if(!wordTyped.equalsIgnoreCase(wordEng)){
                 System.out.println("What a pity! But it\'s wrong!");
                 System.out.println("The correct word for \"" + wordOth + "\" is: " + wordEng);
+
             } else {
                 System.out.println("ARE YOU MAD?");
             }
@@ -181,30 +192,27 @@ public class InRandoms{
                 System.out.println(("Please type the word \"") + keyWord + ("\" in " + goLang));
                 Scanner sc = new Scanner(System.in);
                 String inpWord = sc.nextLine();
+
                 if(inpWord.equalsIgnoreCase(valWord)){
                     System.out.println("Excellent! That\'s correct!");
                     correctWord++;
+
                 } else if(!inpWord.equalsIgnoreCase(valWord)){
                     System.out.println("What a pity! But you are wrong!");
                     System.out.println(("The correct ") + goLang +(" word for \"") + keyWord + ("\" is: ") + valWord);
+
                 } else {
                     System.out.println("What happends?");
                 }
+
             } else {
                 i--;
             }
         }
+
         double rateTest = ((double)correctWord/(double)counter)*100d;
         double rateDict = (double)((double)counter/(double)dictSrcDes.size())*100d;
         ManagerDict.setRatingReview(dictSrcDes, correctWord, counter, rateTest, rateDict);
-
-        // System.out.println();
-        // System.out.println("  test result");
-        // System.out.println("  - - - - - -");
-        // System.out.printf("You tested " + counter + " words, among them " + correctWord + " are correct, rate %.2f%%.%n", ((double)correctWord/(double)counter)*100);
-        // System.out.println("The current dictionary contains " + dictSrcDes.size() + " word pairs in total");
-        // System.out.printf("and you\'ve already tested %.2f%%. Well done! Keep on practicing!%n", (double)((double)counter/(double)dictSrcDes.size())*100f);
-        // System.out.println();
     }
 
     private void randomTestNormalOth(HashMap<String, String> dictSrcDes){
@@ -252,4 +260,3 @@ public class InRandoms{
     }
 
 }
-

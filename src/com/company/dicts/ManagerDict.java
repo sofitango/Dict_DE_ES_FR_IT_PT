@@ -1,6 +1,5 @@
 package com.company.dicts;
 // import dicts.*;
-import com.company.dicts.*;
 
 import java.util.HashMap;
 import java.util.Scanner;

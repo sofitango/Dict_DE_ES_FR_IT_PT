@@ -1,9 +1,12 @@
-package com.company;
+package com.company.main;
 
 import com.company.dicts.*;
 import java.util.Scanner;
 import java.util.HashMap;
 
+/**
+ * Main class of the Java program.
+ */
 
 public class Manager {
 
@@ -57,7 +60,7 @@ public class Manager {
             System.out.println(" Choice made: English-Portugese / ingles-portugues");
             dictSrcDes = DictEngPrt.dictEngPrt();
         } else if(lanChosen==6){
-            System.out.println("- Program Terminated -");
+            System.out.println("- Program Terminated as wished -");
             System.out.println("Good-bye!");
             System.exit(0);
             System.out.println();

@@ -1,13 +1,15 @@
-package com.company;
+package com.company.main;
+
+/**
+ * Main class of the Java program.
+ */
 
 public class Main {
 
     public static void main(String[] args) {
-        // import dicts.*;
+
         Manager manager = new Manager();
         manager.start();
-                // MainView.start();
     }
 
 }
-

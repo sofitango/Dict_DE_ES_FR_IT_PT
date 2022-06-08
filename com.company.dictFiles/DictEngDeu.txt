@@ -1,7 +1,7 @@
 package com.company.dicts;
 import java.util.HashMap;
 
-public class DictEngDeu {
+public class DictEngDeuAAA {
 
     public static HashMap<String, String> dictEngDeu(){
 

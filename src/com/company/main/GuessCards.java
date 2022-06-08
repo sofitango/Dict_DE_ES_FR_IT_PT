@@ -1,4 +1,4 @@
-package com.company;
+package com.company.main;
 
 import com.company.dicts.*;
 import java.util.HashMap;
@@ -49,11 +49,12 @@ public class GuessCards{
                     System.out.println("Hit Return go back to MainMenu");
                     Scanner h2r = new Scanner(System.in);
                     String hit2Return = h2r.nextLine();
-                    // break; 
+                    // break;
                     // Frage 6. Why not possible for false or break?
                     return;
                 }
             }
         }
     }
+
 }

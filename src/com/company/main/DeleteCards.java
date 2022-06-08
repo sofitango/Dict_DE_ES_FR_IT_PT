@@ -1,4 +1,4 @@
-package com.company;
+package com.company.main;
 
 import com.company.dicts.*;
 import java.util.Scanner;
@@ -70,13 +70,12 @@ public class DeleteCards{
                 if(yesNo.equalsIgnoreCase("y") || yesNo.equalsIgnoreCase("yes")){
                     System.out.println("OK, input words again.");
                     deleteWordsAgain = false;
+
                 } else if(yesNo.equalsIgnoreCase("n") || yesNo.equalsIgnoreCase("no")){
                     System.out.println("OK, return to main menu.");
                     deleteWordsAgain = false;
                     deleteWords = false;
-                    // Frage 4. Why not possible with false, break, continue?
-                    // return dictSrcDes;
-                    // Frage 5. How to merge this return with that in line 111?
+
                 } else {
                     System.out.println("Input wrong. Please type y/Yes or n/No.");
                     deleteWordsAgain = false;
@@ -91,4 +90,3 @@ public class DeleteCards{
     }
 
 }
-

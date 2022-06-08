@@ -1,4 +1,4 @@
-package com.company;
+package com.company.main;
 
 import com.company.dicts.*;
 import java.util.Scanner;
