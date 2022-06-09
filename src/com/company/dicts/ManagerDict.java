@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ManagerDict{
 
-    public static String setLanuage(HashMap<String, String> dictSrcDes){
+    public static String setLanguage(HashMap<String, String> dictSrcDes){
 
         String goLang = "";
         if(dictSrcDes.equals(DictEngDeu.dictEngDeu())){

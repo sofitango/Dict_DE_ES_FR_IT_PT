@@ -10,7 +10,7 @@ public class DeleteCards{
         System.out.println();
         System.out.println("Method 3. (D)eleting flash cards (D)");
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictSrcDes = deletingCards(goLang, dictSrcDes);
 
         System.out.println();

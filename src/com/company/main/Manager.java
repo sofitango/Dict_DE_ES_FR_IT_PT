@@ -1,8 +1,12 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
+
+import static com.company.dicts.ManagerFile.dictFileWriter_EngPrt;
 
 /**
  * Main class of the Java program.
@@ -10,7 +14,9 @@ import java.util.HashMap;
 
 public class Manager {
 
-    public void start() {
+    int lanChosen = 0;
+
+    public void start() throws IOException {
 
         bannerShow();
         HashMap<String, String> dictSrcDes = chooseLan();
@@ -25,7 +31,7 @@ public class Manager {
         System.out.println();
     }
 
-    private HashMap<String, String> chooseLan(){
+    private HashMap<String, String> chooseLan() throws IOException {
 
         HashMap<String, String> dictSrcDes = new HashMap<>();
 
@@ -40,24 +46,37 @@ public class Manager {
 
         System.out.print("Please select a language pair or press 6 to quit: ");
 
+        try {
+//            ManagerFile.dictFileCreate();
+            ManagerFile.dictFileCreator();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Scanner sc = new Scanner(System.in);
-        int lanChosen = sc.nextInt();
+//        int lanChosen = sc.nextInt();
+        lanChosen = sc.nextInt();
         System.out.println();
 
         if(lanChosen==1){
             System.out.println(" Choice made: English-German / englisch-deutsch");
+//            ManagerFile.dictFileReader_EngDeu();
             dictSrcDes = DictEngDeu.dictEngDeu();
         } else if(lanChosen==2){
             System.out.println(" Choice made: English-Spanish / ingles-espanol");
+//            ManagerFile.dictFileReader_EngEsp();
             dictSrcDes = DictEngEsp.dictEngEsp();
         } else if(lanChosen==3){
             System.out.println(" Choice made: English-French / anglais-francais");
+//            ManagerFile.dictFileReader_EngFra();
             dictSrcDes = DictEngFra.dictEngFra();
         } else if(lanChosen==4){
             System.out.println(" Choice made: English-Italian / inglese-italiano");
+//            ManagerFile.dictFileReader_EngIta();
             dictSrcDes = DictEngIta.dictEngIta();
         } else if(lanChosen==5){
             System.out.println(" Choice made: English-Portugese / ingles-portugues");
+//            ManagerFile.dictFileReader_EngPrt();
             dictSrcDes = DictEngPrt.dictEngPrt();
         } else if(lanChosen==6){
             System.out.println("- Program Terminated as wished -");
@@ -92,7 +111,7 @@ public class Manager {
         return dictSrcDes;
     }
 
-    private void mainMenu(HashMap<String, String> dictSrcDes){
+    private void mainMenu(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = =");
         System.out.println();
         boolean mainView = true;
@@ -148,6 +167,27 @@ public class Manager {
                 System.out.println();
             } else if(choiceMade.equals("8") || choiceMade.equalsIgnoreCase("Q")){
                 System.out.println("8. (Q)uitting program (Q)");
+
+                if(lanChosen == 1){
+                    System.out.println("Thanks for using mini-dictionary English - German");
+                    ManagerFile.dictFileWriter_EngPrt();
+                } else if(lanChosen == 2){
+                    System.out.println("Thanks for using mini-dictionary English - Spanish");
+                    ManagerFile.dictFileWriter_EngPrt();
+                } else if(lanChosen == 3){
+                    System.out.println("Thanks for using mini-dictionary English - French");
+                    ManagerFile.dictFileWriter_EngPrt();
+                } else if(lanChosen == 4){
+                    System.out.println("Thanks for using mini-dictionary English - Italian");
+                    ManagerFile.dictFileWriter_EngPrt();
+                } else if(lanChosen == 5) {
+                    System.out.println("Thanks for using mini-dictionary English - Portugese");
+                    ManagerFile.dictFileWriter_EngPrt();
+                } else {
+                    System.out.println("Something went wrong.");
+                }
+
+                System.out.println("Updated data are written to file and saved.");
                 System.out.println("Good-bye!");
                 mainView = false;
                 System.out.println();

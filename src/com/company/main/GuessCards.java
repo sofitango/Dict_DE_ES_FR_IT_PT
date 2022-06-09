@@ -10,7 +10,7 @@ public class GuessCards{
         System.out.println();
         System.out.println("2. (G)uessing a flash card (G)");
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         //dictScrDes = RandomTesting(goLang, dictScrDes);
 
         boolean guessACard = true;

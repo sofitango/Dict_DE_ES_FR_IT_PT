@@ -10,7 +10,7 @@ public class ChangeCards{
         System.out.println();
         System.out.println("Method 2. (C)hanging cards (C)");
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictSrcDes = changingCards(goLang, dictSrcDes);
 
         System.out.println();

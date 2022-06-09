@@ -11,7 +11,7 @@ import java.util.Collection;
 public class InRandoms{
 
     public void randomTest(HashMap<String, String> dictSrcDes){
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         randomTesting(goLang, dictSrcDes);
         System.out.println("The module Random Training ends.");
         System.out.println();
@@ -74,7 +74,7 @@ public class InRandoms{
 
     private void randomTestLoopEng(HashMap<String, String> dictSrcDes, int counter){
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         int totalDictNo = dictSrcDes.size();
         ArrayList<Integer> arrNumber = new ArrayList<Integer>();
         ArrayList<String> arrKeyWord = new ArrayList<String>();
@@ -121,7 +121,7 @@ public class InRandoms{
 
     private void randomTestNormalEng(HashMap<String, String> dictSrcDes){
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
 
         boolean randTest = true;
         while(randTest){
@@ -168,7 +168,7 @@ public class InRandoms{
 
     private void randomTestLoopOth(HashMap<String, String> dictSrcDes, int counter){
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         int totalDictNo = dictSrcDes.size();
         ArrayList<Integer> arrNumber = new ArrayList<Integer>();
         ArrayList<String> arrKeyWord = new ArrayList<String>();
@@ -217,7 +217,7 @@ public class InRandoms{
 
     private void randomTestNormalOth(HashMap<String, String> dictSrcDes){
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
 
         boolean randTest = true;
         while(randTest){

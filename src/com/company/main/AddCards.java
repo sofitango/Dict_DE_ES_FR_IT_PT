@@ -10,7 +10,7 @@ public class AddCards{
         System.out.println();
         System.out.println("Method 1. (A)dding cards (A)");
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictSrcDes = addingCards(goLang, dictSrcDes);
 
         System.out.println();

@@ -1,6 +1,8 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -11,7 +13,15 @@ public class ListInPairs{
         System.out.println(" Showing words in pairs");
         System.out.println("- - - - - - - - - - - - -");
 
-        String goLang = ManagerDict.setLanuage(dictSrcDes);
+// !!!
+//        System.out.println(dictSrcDes.keySet().toArray());
+
+        Object[] objectArray = dictSrcDes.entrySet().toArray();
+        System.out.println(Arrays.toString(objectArray));
+
+// !!!
+
+        String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictInPairsShowing(goLang, dictSrcDes);
     }
 
