@@ -60,23 +60,23 @@ public class Manager {
 
         if(lanChosen==1){
             System.out.println(" Choice made: English-German / englisch-deutsch");
-//            ManagerFile.dictFileReader_EngDeu();
+            ManagerFile.dictFileReader_EngDeu();
             dictSrcDes = DictEngDeu.dictEngDeu();
         } else if(lanChosen==2){
             System.out.println(" Choice made: English-Spanish / ingles-espanol");
-//            ManagerFile.dictFileReader_EngEsp();
+            ManagerFile.dictFileReader_EngEsp();
             dictSrcDes = DictEngEsp.dictEngEsp();
         } else if(lanChosen==3){
             System.out.println(" Choice made: English-French / anglais-francais");
-//            ManagerFile.dictFileReader_EngFra();
+            ManagerFile.dictFileReader_EngFra();
             dictSrcDes = DictEngFra.dictEngFra();
         } else if(lanChosen==4){
             System.out.println(" Choice made: English-Italian / inglese-italiano");
-//            ManagerFile.dictFileReader_EngIta();
+            ManagerFile.dictFileReader_EngIta();
             dictSrcDes = DictEngIta.dictEngIta();
         } else if(lanChosen==5){
             System.out.println(" Choice made: English-Portugese / ingles-portugues");
-//            ManagerFile.dictFileReader_EngPrt();
+            ManagerFile.dictFileReader_EngPrt();
             dictSrcDes = DictEngPrt.dictEngPrt();
         } else if(lanChosen==6){
             System.out.println("- Program Terminated as wished -");
@@ -170,16 +170,16 @@ public class Manager {
 
                 if(lanChosen == 1){
                     System.out.println("Thanks for using mini-dictionary English - German");
-                    ManagerFile.dictFileWriter_EngPrt();
+                    ManagerFile.dictFileWriter_EngDeu();
                 } else if(lanChosen == 2){
                     System.out.println("Thanks for using mini-dictionary English - Spanish");
-                    ManagerFile.dictFileWriter_EngPrt();
+                    ManagerFile.dictFileWriter_EngEsp();
                 } else if(lanChosen == 3){
                     System.out.println("Thanks for using mini-dictionary English - French");
-                    ManagerFile.dictFileWriter_EngPrt();
+                    ManagerFile.dictFileWriter_EngFra();
                 } else if(lanChosen == 4){
                     System.out.println("Thanks for using mini-dictionary English - Italian");
-                    ManagerFile.dictFileWriter_EngPrt();
+                    ManagerFile.dictFileWriter_EngIta();
                 } else if(lanChosen == 5) {
                     System.out.println("Thanks for using mini-dictionary English - Portugese");
                     ManagerFile.dictFileWriter_EngPrt();

@@ -93,8 +93,7 @@ public class ManagerFile {
         fr.close();
     }
 
-
-    public static void dictFileWriter11() throws IOException {
+    public static void dictFileWriter_EngDeu() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngDeu");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngDeu.txt");
         char[] chs = new char[1024];
@@ -107,7 +106,7 @@ public class ManagerFile {
         fr.close();
     }
 
-    public static void dictFileWriter12() throws IOException {
+    public static void dictFileWriter_EngEsp() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngEsp.java");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngEsp.txt");
         char[] chs = new char[1024];
@@ -119,7 +118,7 @@ public class ManagerFile {
         fw.close();
         fr.close();
     }
-    public static void dictFileWriter13() throws IOException {
+    public static void dictFileWriter_EngFra() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngFra.java");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngFra.txt");
         char[] chs = new char[1024];
@@ -131,7 +130,7 @@ public class ManagerFile {
         fw.close();
         fr.close();
     }
-    public static void dictFileWriter14() throws IOException {
+    public static void dictFileWriter_EngIta() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngIta.java");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngIta.txt");
         char[] chs = new char[1024];

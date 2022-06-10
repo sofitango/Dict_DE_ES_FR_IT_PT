@@ -5,8 +5,6 @@ public class DictEngDeu {
 
     public static HashMap<String, String> dictEngDeu(){
 
-//[bus=Bus, chicken=Kueken, woman=Frau, young=jung, fruit=Obst, vegetable=Gemuese, boy=Junge, bike=Fahrrad, hen=Henne, noon=Mittag, car=Auto, duck=Ente, cat=Katze, man=Mann, rain=Regen, old=alt, night=Nacht, girl=Maedchen, morning=Morgen, fish=Fisch, meat=Fleisch, cock=Hahn, evening=Abend, dog=Hund, wind=Wind]
-
         HashMap<String, String> dictEngDeu = new HashMap<>();
 
         dictEngDeu.put("cat", "Katze");
