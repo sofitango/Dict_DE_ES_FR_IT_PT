@@ -1,30 +1,24 @@
 # Dict_DE_ES_FR_IT_PT
 Dict_DE_ES_FR_IT_PT
 
-1. (A)dding flash cards (A)
-2. (C)hanging flash cards (C)
-3. (D)eleting flash cards (D)
-4. (G)uessing flash cards (G)
-5. (R)andom flash card test (R)
-6. (L)isting all flash cards (L)
-7. (S)howing all cards in pairs (S)
-8. (Q)uitting program (Q)
-1. (A)dding flash cards (A)
-- only in order English - Deutsch/Espanol/Francais/Italiano/Portugues
-- no limit for adding word-pairs
-2. (C)hanging flash cards (C)
-- only in order English - Deutsch /Espanol/Francais/Italiano/Portugues
-3. (D)eleting flash cards (D)
-- no word order necessarily (you can delete a word-pair in both language search)
-4. (G)uessing flash cards (G)
-- only in order English - Deutsch /Espanol/Francais/Italiano/Portugues
-(will offer the reverted choice when I have time)
-5. (R)andom flash card test (R)  - possible language training in two directions (Englich-Deutsch / Deutsch-English)
-- training-set with a certain number of words (25/file-check) or by single pair
-- in case of training-set, show statistic evaluation value of correctness
-6. (L)isting all flash cards (L)
-- always in order English - Deutsch/Espanol/Francais/Italiano/Portugues
-- show word-pair vertically
-7. (S)howing all cards in pairs (S)
-- always in order English - Deutsch/Espanol/Francais/Italiano/Portugues
-- show word-pair horizontally in normal array
+<H1>Multi-Language-Dictionary </H1>
+  <H2>Intermediate Delivery:</H2>
+<ul>
+<li>Setting up dictionary pairs (English-Deutsch)</li>
+<li>Welcome page with language choice</li>
+<li>Bi-direction search (both key-value and value-key)</li>
+<li>Basic functions: Add/Delete/Change/Show words in pairs</li>
+</ul>
+<ul>
+<H2>Final Delivery:</H2>
+<li>Expand dictionary pairs to further 4 languages (English-Espanol/Francais/Italiano/Portugues)</li>
+<li>Random word guess</li>
+<li>Show statistic value</li>
+</ul>
+  <H2>If there is time</H2>
+<ul>
+<li>update word-pairs by reading from / writing to files</li>
+<li>login as a registered user with password saved in user-data-file</li>
+<li>register as a new user by email-address and password, save to user-data-file</li>
+<li>change email-address and/ro password, save to user-data-file</li>
+</ul>
