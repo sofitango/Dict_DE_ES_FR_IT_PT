@@ -10,6 +10,9 @@ public class AddCards{
         System.out.println();
         System.out.println("Method 1. (A)dding cards (A)");
 
+        int dictSize = dictSrcDes.size();
+        System.out.println("- At the moment the dictionary has " + dictSize + " flash cards. -");
+
         String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictSrcDes = addingCards(goLang, dictSrcDes);
 
@@ -22,6 +25,8 @@ public class AddCards{
     }
 
     public static HashMap<String, String> addingCards(String goLang, HashMap<String, String> dictSrcDes){
+
+        int dictSize = 0;
 
         Scanner input = new Scanner(System.in);
         boolean addWords = true;
@@ -37,7 +42,7 @@ public class AddCards{
                 // System.out.println(x + " -- " + y);
             }
 
-            int wordsAddedLast = dictSrcDes.size();
+            dictSize += dictSrcDes.size();
             // System.out.println(wordsAddedLast);
             // System.out.println("Added words to ingle=espanol: " + (dictSrcDes.get(wordsAddedLast)));
             // Frage 2a. How to show the last added word-pair?
@@ -65,6 +70,8 @@ public class AddCards{
                     // Frage 4. Why not possible with false, break, continue?
                     // return dictSrcDes;
                     // Frage 5. How to merge this return with that in line 111?
+
+                    System.out.println("- Now the dictionary has " + dictSize + " flash cards. -");
 
                 } else {
                     System.out.println("Input wrong. Please type y/Yes or n/No.");

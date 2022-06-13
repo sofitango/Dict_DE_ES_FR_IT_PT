@@ -10,6 +10,9 @@ public class DeleteCards{
         System.out.println();
         System.out.println("Method 3. (D)eleting flash cards (D)");
 
+        int dictSize = dictSrcDes.size();
+        System.out.println("- At the moment the dictionary has " + dictSize + " flash cards. -");
+
         String goLang = ManagerDict.setLanguage(dictSrcDes);
         dictSrcDes = deletingCards(goLang, dictSrcDes);
 
@@ -24,13 +27,16 @@ public class DeleteCards{
     public static HashMap<String, String> deletingCards(String goLang, HashMap<String, String> dictSrcDes){
         Scanner input = new Scanner(System.in);
 
+        int dictSize = 0;
+
         boolean deleteWords = true;
         while(deleteWords){
             System.out.println("Please enter the word for deletion from flash cards:");
             String wordSrc = input.nextLine();
             String wordDes = "";
 
-            int dictSize = dictSrcDes.size();
+            dictSize = dictSrcDes.size();
+
             for(int i=0; i<dictSize; i++){
                 for(String key : dictSrcDes.keySet()){
                     String value = dictSrcDes.get(key);
@@ -43,7 +49,7 @@ public class DeleteCards{
                         if(yesNo.equalsIgnoreCase("yes") || yesNo.equalsIgnoreCase("y")) {
                             dictSrcDes.remove(key);
                             System.out.println("Deletion of word pair \"" + wordSrc + " - " + wordDes + "\" completed." );
-                            i = dictSize;
+                            i -= dictSize;
                             break;
                         } else if(yesNo.equalsIgnoreCase("no") || yesNo.equalsIgnoreCase("n")) {
                             System.out.println("Alright, no words are deleted." );
@@ -85,6 +91,7 @@ public class DeleteCards{
 //            How to create doYesOrNo methond with two false values line 69/70 ??? ???
         }
         // System.out.println(dictSrcDes); // Del
+        System.out.println("- Now the dictionary has " + dictSize + " flash cards. -");
         System.out.println();
         return dictSrcDes;
     }
