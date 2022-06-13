@@ -33,6 +33,20 @@ public class ManagerFile {
 
     public static void dictFileReader_EngDeu() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngDeu.txt");
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngDeu.dat");
+        char[] chs = new char[1024];
+        int len = 0;
+        while ((len= fr.read(chs)) !=-1){
+            fw.write(chs, 0, len);
+            fw.flush();
+        }
+        fw.close();
+        fr.close();
+    }
+
+/*
+    public static void dictFileReader_EngDeu() throws IOException {
+        FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngDeu.txt");
         FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngDeu.java");
         char[] chs = new char[1024];
         int len = 0;
@@ -43,6 +57,7 @@ public class ManagerFile {
         fw.close();
         fr.close();
     }
+*/
 
     public static void dictFileReader_EngEsp() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngEsp.txt");
@@ -80,6 +95,7 @@ public class ManagerFile {
         fw.close();
         fr.close();
     }
+
     public static void dictFileReader_EngPrt() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngPrt.txt");
         FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngPrt.java");

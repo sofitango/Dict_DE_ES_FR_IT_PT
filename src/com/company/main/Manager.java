@@ -125,7 +125,8 @@ public class Manager {
             System.out.println("5. (R)andom flash card test (R)");
             System.out.println("6. (L)isting all flash cards (L)");
             System.out.println("7. (S)howing all cards in pairs (S)");
-            System.out.println("8. (Q)uitting program (Q)");
+            System.out.println("8. (V)erify word in flash cards (V)");
+            System.out.println("9. (Q)uitting program (Q)");
             System.out.println();
 
             Scanner input = new Scanner(System.in);
@@ -165,8 +166,12 @@ public class Manager {
                 System.out.println("7. (S)howing words in pairs (S)");
                 ListInPairs.dictInPairs(dictSrcDes);
                 System.out.println();
-            } else if(choiceMade.equals("8") || choiceMade.equalsIgnoreCase("Q")){
-                System.out.println("8. (Q)uitting program (Q)");
+            } else if(choiceMade.equals("8") || choiceMade.equalsIgnoreCase("E")){
+                System.out.println("8. (V)erify word in flash cards (V)");
+                VerifyAWord.verifyAWord(dictSrcDes);
+                System.out.println();
+            } else if(choiceMade.equals("9") || choiceMade.equalsIgnoreCase("Q")){
+                System.out.println("9. (Q)uitting program (Q)");
 
                 if(lanChosen == 1){
                     System.out.println("Thanks for using mini-dictionary English - German");
