@@ -1,12 +1,13 @@
 package com.company.dicts;
 // import dicts.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class ManagerDict{
 
-    public static String setLanguage(HashMap<String, String> dictSrcDes){
+    public static String setLanguage(HashMap<String, String> dictSrcDes) throws IOException {
 
         String goLang = "";
         if(dictSrcDes.equals(DictEngDeu.dictEngDeu())){

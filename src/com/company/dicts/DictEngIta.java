@@ -1,40 +1,65 @@
 package com.company.dicts;
+
+import java.io.*;
 import java.util.HashMap;
 
-public class DictEngIta{
+public class DictEngIta {
 
-    public static HashMap<String, String> dictEngIta(){
+    public static HashMap<String, String> dictEngIta() throws IOException {
 
         HashMap<String, String> dictEngIta = new HashMap<>();
 
-        dictEngIta.put("cat", "gatto");
-        dictEngIta.put("dog", "cane");
-        dictEngIta.put("cock", "rubinetto");
-        dictEngIta.put("hen", "gallina");
-        dictEngIta.put("chicken", "gallina");
-        dictEngIta.put("duck", "anatra");
-        dictEngIta.put("fish", "pesce");
-        dictEngIta.put("meat", "carne");
-        dictEngIta.put("vegetable", "verdura");
-        dictEngIta.put("fruit", "fruta");
-        dictEngIta.put("man", "uomo");
-        dictEngIta.put("woman", "donna");
-        dictEngIta.put("boy", "ragazzo");
-        dictEngIta.put("girl", "ragazza");
-        dictEngIta.put("young", "giovane");
-        dictEngIta.put("old", "vecchio");
-        dictEngIta.put("bike", "bicicletta");
-        dictEngIta.put("bus", "autobus");
-        dictEngIta.put("car", "macchina");
-        dictEngIta.put("morning", "mattina");
-        dictEngIta.put("noon", "mezzogiorno");
-        dictEngIta.put("evening", "sera");
-        dictEngIta.put("night", "notte");
-        dictEngIta.put("wind", "vento");
-        dictEngIta.put("rain", "pioggia");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\dictEngIta.dat");
+        BufferedReader br = new BufferedReader(fr);
 
+        String line = null;
+        while ((line = br.readLine()) != null) {
+
+            String str = line;
+            String[] arrOfStr = str.split(" - ");
+            String wordSrc = arrOfStr[0];
+            String wordDes = arrOfStr[1];
+            System.out.println(wordSrc);
+            System.out.println(wordDes);
+
+            dictEngIta.put(wordSrc, wordDes);
+        }
+        br.close();
         return dictEngIta;
     }
 
-}
+    public static void dictFileWriter_EngDeu() throws IOException {
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\dictEngIta.dat");
+        FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\dictEngIta.txt");
+        char[] chs = new char[1024];
+        int len = 0;
+        while ((len = fr.read(chs)) != -1) {
+            fw.write(chs, 0, len);
+            fw.flush();
+        }
+        fw.close();
+        fr.close();
+    }
 
+    public static void dictEngItaWriteToDatFile(HashMap<String, String> dictSrcDes) throws IOException {
+
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\dictEngIta.dat");
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        int dictSize = dictSrcDes.size();
+        int counter = 0;
+
+        for(String key : dictSrcDes.keySet()){
+            String value = dictSrcDes.get(key);
+//            System.out.println(key + " - " + value);
+            bw.write(key + " - " + value);
+            if(counter < dictSize-1){
+                bw.newLine();
+            }
+            bw.flush();
+            counter++;
+        }
+        bw.close();
+    }
+
+}

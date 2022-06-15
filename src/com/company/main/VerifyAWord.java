@@ -1,12 +1,14 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class VerifyAWord{
+public class VerifyAWord {
 
-    public static HashMap<String, String> verifyAWord(HashMap<String, String> dictSrcDes){
+    public static HashMap<String, String> verifyAWord(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println();
         System.out.println("Method 8. (V)erify a word in all flash cards (V)");
 
@@ -21,35 +23,43 @@ public class VerifyAWord{
         return dictSrcDes;
     }
 
-    public static HashMap<String, String> verifyAWord(String goLang, HashMap<String, String> dictSrcDes){
+    public static HashMap<String, String> verifyAWord(String goLang, HashMap<String, String> dictSrcDes) {
         Scanner input = new Scanner(System.in);
 
         boolean verifyAWord = true;
-        while(verifyAWord){
+        while (verifyAWord) {
             System.out.println("Please enter the word to verify from all flash cards:");
-            String wordSrc = input.nextLine();
-            String wordDes = "";
+            String wordToVerify = input.nextLine();
 
             int dictSize = dictSrcDes.size();
-            for(int i=0; i<dictSize; i++){
-                for(String key : dictSrcDes.keySet()){
+            for (int i = 0; i < dictSize; i++) {
+                for (String key : dictSrcDes.keySet()) {
                     String value = dictSrcDes.get(key);
-                    if(wordSrc.equalsIgnoreCase(key) || wordSrc.equalsIgnoreCase(value)){
-                        wordDes = dictSrcDes.get(key);
-                        System.out.println("Word \"" + wordSrc + "\" can be verified in the flash cards." );
+                    if (wordToVerify.equalsIgnoreCase(key)) {
+                        System.out.println("Word \"" + key + "\" can be verified in the flash cards.");
+// FRAGE!!!             i = dictSize; // ??? Why must be needed ???
+                        i = dictSize; // ??? Why must be needed ???
+                        break;
+                    } else if (wordToVerify.equalsIgnoreCase(value)) {
+                        System.out.println("Word \"" + value + "\" can be verified in the flash cards.");
                         i = dictSize;
                         break;
                     }
-// Wo ist der Denkfehler mit if...else...???
+
+// FRAGE!!! Why not? Wo ist der Denkfehler mit if...else...???
 //                    else {
-//                    System.out.println("Word \"" + wordSrc + "\" can not be verified in current dictionary.");
+//                        if (i < dictSize - 1) {
+//                            break;
+//                        } else
+//                            System.out.println("Word \"" + wordToVerify + "\" can not be verified in current dictionary.");
+//                        i = dictSize;
 //                    }
-//              }
-//          }
+//                }
+//            }
 
                 }
                 if((dictSize-1)==i){
-                    System.out.println("Word \"" + wordSrc + "\" can not be verified in current dictionary.");
+                    System.out.println("Word \"" + wordToVerify + "\" can not be verified in current dictionary.");
                 }
             }
 
@@ -59,12 +69,12 @@ public class VerifyAWord{
             System.out.println();
 
             boolean verifyAWordAgain = true;
-            while(verifyAWordAgain){
-                if(yesNo.equalsIgnoreCase("y") || yesNo.equalsIgnoreCase("yes")){
+            while (verifyAWordAgain) {
+                if (yesNo.equalsIgnoreCase("y") || yesNo.equalsIgnoreCase("yes")) {
                     System.out.println("OK, input words again.");
                     verifyAWordAgain = false;
 
-                } else if(yesNo.equalsIgnoreCase("n") || yesNo.equalsIgnoreCase("no")){
+                } else if (yesNo.equalsIgnoreCase("n") || yesNo.equalsIgnoreCase("no")) {
                     System.out.println("OK, return to main menu.");
                     verifyAWord = false;
                     verifyAWordAgain = false;

@@ -1,12 +1,14 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
 
 public class ChangeCards{
 
-    public static HashMap<String, String> changeCards(HashMap<String, String> dictSrcDes){
+    public static HashMap<String, String> changeCards(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println();
         System.out.println("Method 2. (C)hanging cards (C)");
 

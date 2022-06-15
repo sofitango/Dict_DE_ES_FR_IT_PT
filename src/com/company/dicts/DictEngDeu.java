@@ -1,41 +1,65 @@
 package com.company.dicts;
+
+import java.io.*;
 import java.util.HashMap;
 
 public class DictEngDeu {
 
-    public static HashMap<String, String> dictEngDeu(){
-
-//[bus=Bus, chicken=Kueken, woman=Frau, young=jung, fruit=Obst, vegetable=Gemuese, boy=Junge, bike=Fahrrad, hen=Henne, noon=Mittag, car=Auto, duck=Ente, cat=Katze, man=Mann, rain=Regen, old=alt, night=Nacht, girl=Maedchen, morning=Morgen, fish=Fisch, meat=Fleisch, cock=Hahn, evening=Abend, dog=Hund, wind=Wind]
+    public static HashMap<String, String> dictEngDeu() throws IOException {
 
         HashMap<String, String> dictEngDeu = new HashMap<>();
 
-        dictEngDeu.put("cat", "Katze");
-        dictEngDeu.put("dog", "Hund");
-        dictEngDeu.put("cock", "Hahn");
-        dictEngDeu.put("hen", "Henne");
-        dictEngDeu.put("chicken", "Kueken");
-        dictEngDeu.put("duck", "Ente");
-        dictEngDeu.put("fish", "Fisch");
-        dictEngDeu.put("meat", "Fleisch");
-        dictEngDeu.put("vegetable", "Gemuese");
-        dictEngDeu.put("fruit", "Obst");
-        dictEngDeu.put("man", "Mann");
-        dictEngDeu.put("woman", "Frau");
-        dictEngDeu.put("boy", "Junge");
-        dictEngDeu.put("girl", "Maedchen");
-        dictEngDeu.put("young", "jung");
-        dictEngDeu.put("old", "alt");
-        dictEngDeu.put("bike", "Fahrrad");
-        dictEngDeu.put("bus", "Bus");
-        dictEngDeu.put("car", "Auto");
-        dictEngDeu.put("morning", "Morgen");
-        dictEngDeu.put("noon", "Mittag");
-        dictEngDeu.put("evening", "Abend");
-        dictEngDeu.put("night", "Nacht");
-        dictEngDeu.put("wind", "Wind");
-        dictEngDeu.put("rain", "Regen");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngDeu.dat");
+        BufferedReader br = new BufferedReader(fr);
 
+        String line = null;
+        while ((line = br.readLine()) != null) {
+
+            String str = line;
+            String[] arrOfStr = str.split(" - ");
+            String wordSrc = arrOfStr[0];
+            String wordDes = arrOfStr[1];
+            System.out.println(wordSrc);
+            System.out.println(wordDes);
+
+            dictEngDeu.put(wordSrc, wordDes);
+        }
+        br.close();
         return dictEngDeu;
+    }
+
+    public static void dictFileWriter_EngDeu() throws IOException {
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngDeu.dat");
+        FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngDeu.txt");
+        char[] chs = new char[1024];
+        int len = 0;
+        while ((len = fr.read(chs)) != -1) {
+            fw.write(chs, 0, len);
+            fw.flush();
+        }
+        fw.close();
+        fr.close();
+    }
+
+    public static void dictEngDeuWriteToDatFile(HashMap<String, String> dictSrcDes) throws IOException {
+
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngDeu.dat");
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        int dictSize = dictSrcDes.size();
+        int counter = 0;
+
+        for(String key : dictSrcDes.keySet()){
+            String value = dictSrcDes.get(key);
+//            System.out.println(key + " - " + value);
+            bw.write(key + " - " + value);
+            if(counter < dictSize-1){
+                bw.newLine();
+            }
+            bw.flush();
+            counter++;
+        }
+        bw.close();
     }
 
 }

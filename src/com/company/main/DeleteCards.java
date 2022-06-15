@@ -1,12 +1,14 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
 
 public class DeleteCards{
 
-    public static HashMap<String, String> deleteCards(HashMap<String, String> dictSrcDes){
+    public static HashMap<String, String> deleteCards(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println();
         System.out.println("Method 3. (D)eleting flash cards (D)");
 
@@ -57,13 +59,17 @@ public class DeleteCards{
                             // break;
                             // deleteWords = false;
                         } else {
-                            System.out.println("Input wrong!");
+//                            if((dictSize-1)==i){
+                                System.out.println("Now no word \"" + wordSrc + "\" is found in current dictionary.");
                         }
+
+//                            System.out.println("Input wrong!");
+//                        }
                     }
                 }
-                if((dictSize-1)==i){
-                    System.out.println("Word \"" + wordSrc + "\" is not found in current dictionary.");
-                }
+//                if((dictSize-1)==i){
+//                    System.out.println("Now no word \"" + wordSrc + "\" is found in current dictionary.");
+//                }
             }
 
             System.out.println();

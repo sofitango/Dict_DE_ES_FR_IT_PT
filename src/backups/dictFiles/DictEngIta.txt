@@ -37,4 +37,30 @@ public class DictEngIta{
     }
 
 }
-
+/*
+bus - autobus
+chicken - gallina
+woman - donna
+young - giovane
+fruit - fruta
+vegetable - verdura
+boy - ragazzo
+bike - bicicletta
+hen - gallina
+noon - mezzogiorno
+car - macchina
+duck - anatra
+cat - gatto
+man - uomo
+rain - pioggia
+old - vecchio
+night - notte
+girl - ragazza
+morning - mattina
+fish - pesce
+meat - carne
+cock - rubinetto
+evening - sera
+dog - cane
+wind - vento
+*/

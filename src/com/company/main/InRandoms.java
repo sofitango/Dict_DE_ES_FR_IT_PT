@@ -1,6 +1,8 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.HashMap;
@@ -10,7 +12,7 @@ import java.util.Collection;
 
 public class InRandoms{
 
-    public void randomTest(HashMap<String, String> dictSrcDes){
+    public void randomTest(HashMap<String, String> dictSrcDes) throws IOException {
         String goLang = ManagerDict.setLanguage(dictSrcDes);
         randomTesting(goLang, dictSrcDes);
         System.out.println("The module Random Training ends.");
@@ -21,7 +23,7 @@ public class InRandoms{
         System.out.println();
     }
 
-    public void randomTesting(String goLang, HashMap<String, String> dictSrcDes){
+    public void randomTesting(String goLang, HashMap<String, String> dictSrcDes) throws IOException {
 
         System.out.println("1. Train English (press 1)");
         System.out.println("2. Train " + goLang + " (press 2)");
@@ -72,7 +74,7 @@ public class InRandoms{
         }
     }
 
-    private void randomTestLoopEng(HashMap<String, String> dictSrcDes, int counter){
+    private void randomTestLoopEng(HashMap<String, String> dictSrcDes, int counter) throws IOException {
 
         String goLang = ManagerDict.setLanguage(dictSrcDes);
         int totalDictNo = dictSrcDes.size();
@@ -119,7 +121,7 @@ public class InRandoms{
         ManagerDict.setRatingReview(dictSrcDes, correctWord, counter, rateTest, rateDict);
     }
 
-    private void randomTestNormalEng(HashMap<String, String> dictSrcDes){
+    private void randomTestNormalEng(HashMap<String, String> dictSrcDes) throws IOException {
 
         String goLang = ManagerDict.setLanguage(dictSrcDes);
 
@@ -166,7 +168,7 @@ public class InRandoms{
         }
     }
 
-    private void randomTestLoopOth(HashMap<String, String> dictSrcDes, int counter){
+    private void randomTestLoopOth(HashMap<String, String> dictSrcDes, int counter) throws IOException {
 
         String goLang = ManagerDict.setLanguage(dictSrcDes);
         int totalDictNo = dictSrcDes.size();
@@ -215,7 +217,7 @@ public class InRandoms{
         ManagerDict.setRatingReview(dictSrcDes, correctWord, counter, rateTest, rateDict);
     }
 
-    private void randomTestNormalOth(HashMap<String, String> dictSrcDes){
+    private void randomTestNormalOth(HashMap<String, String> dictSrcDes) throws IOException {
 
         String goLang = ManagerDict.setLanguage(dictSrcDes);
 

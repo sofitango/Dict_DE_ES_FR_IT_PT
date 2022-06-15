@@ -32,6 +32,9 @@ public class ManagerFile {
     }
 
     public static void dictFileReader_EngDeu() throws IOException {
+        File dictsFileEngDeuDat = new File("src\\com\\company\\dicts\\DictEngDeu.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+        dictsFileEngDeuDat.createNewFile();
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngDeu.txt");
         FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngDeu.dat");
         char[] chs = new char[1024];
@@ -44,24 +47,9 @@ public class ManagerFile {
         fr.close();
     }
 
-/*
-    public static void dictFileReader_EngDeu() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngDeu.txt");
-        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngDeu.java");
-        char[] chs = new char[1024];
-        int len = 0;
-        while ((len= fr.read(chs)) !=-1){
-            fw.write(chs, 0, len);
-            fw.flush();
-        }
-        fw.close();
-        fr.close();
-    }
-*/
-
     public static void dictFileReader_EngEsp() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngEsp.txt");
-        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngEsp.java");
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngEsp.dat");
         char[] chs = new char[1024];
         int len = 0;
         while ((len= fr.read(chs)) !=-1){
@@ -73,7 +61,7 @@ public class ManagerFile {
     }
     public static void dictFileReader_EngFra() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngFra.txt");
-        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngFra.java");
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngFra.dat");
         char[] chs = new char[1024];
         int len = 0;
         while ((len= fr.read(chs)) !=-1){
@@ -85,7 +73,7 @@ public class ManagerFile {
     }
     public static void dictFileReader_EngIta() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngIta.txt");
-        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngIta.java");
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngIta.dat");
         char[] chs = new char[1024];
         int len = 0;
         while ((len= fr.read(chs)) !=-1){
@@ -98,7 +86,7 @@ public class ManagerFile {
 
     public static void dictFileReader_EngPrt() throws IOException {
         FileReader fr = new FileReader("src\\com\\company\\dictFiles\\DictEngPrt.txt");
-        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngPrt.java");
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngPrt.dat");
         char[] chs = new char[1024];
         int len = 0;
         while ((len= fr.read(chs)) !=-1){
@@ -110,7 +98,7 @@ public class ManagerFile {
     }
 
     public static void dictFileWriter_EngDeu() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngDeu");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngDeu.dat");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngDeu.txt");
         char[] chs = new char[1024];
         int len = 0;
@@ -120,10 +108,13 @@ public class ManagerFile {
         }
         fw.close();
         fr.close();
+        File dictsFileEngDeuDatDel = new File("src\\com\\company\\dicts\\DictEngDeu.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+//        dictsFileEngDeuDatDel.delete();
     }
 
     public static void dictFileWriter_EngEsp() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngEsp.java");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngEsp.dat");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngEsp.txt");
         char[] chs = new char[1024];
         int len = 0;
@@ -133,9 +124,13 @@ public class ManagerFile {
         }
         fw.close();
         fr.close();
+        File dictsFileEngEspDatDel = new File("src\\com\\company\\dicts\\DictEngEsp.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+//        dictsFileEngEspDatDel.delete();
     }
+
     public static void dictFileWriter_EngFra() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngFra.java");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngFra.dat");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngFra.txt");
         char[] chs = new char[1024];
         int len = 0;
@@ -145,9 +140,13 @@ public class ManagerFile {
         }
         fw.close();
         fr.close();
+        File dictsFileEngFraDatDel = new File("src\\com\\company\\dicts\\DictEngFra.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+//        dictsFileEngFraDatDel.delete();
     }
+
     public static void dictFileWriter_EngIta() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngIta.java");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngIta.dat");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngIta.txt");
         char[] chs = new char[1024];
         int len = 0;
@@ -157,9 +156,13 @@ public class ManagerFile {
         }
         fw.close();
         fr.close();
+        File dictsFileEngItaDatDel = new File("src\\com\\company\\dicts\\DictEngIta.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+//        dictsFileEngItaDatDel.delete();
     }
+
     public static void dictFileWriter_EngPrt() throws IOException {
-        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngPrt.java");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngPrt.dat");
         FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngPrt.txt");
         char[] chs = new char[1024];
         int len = 0;
@@ -169,6 +172,10 @@ public class ManagerFile {
         }
         fw.close();
         fr.close();
+        File dictsFileEngPrtDatDel = new File("src\\com\\company\\dicts\\DictEngPrt.dat");
+//        System.out.println("Create New File: " + file1.createNewFile());
+//        dictsFileEngPrtDatDel.delete();
+
     }
 
 /*

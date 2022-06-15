@@ -38,3 +38,30 @@ public class DictEngPrt{
 
 }
 
+/*
+bus - onibus
+chicken - pinto
+woman - mulher
+young - jovem
+fruit - fruta
+vegetable - legume
+boy - garoto
+bike - bicicleta
+hen - galinha
+noon - meio-dia
+car - automovel
+duck - pato
+cat - gato
+man - homem
+rain - chuva
+old - velho
+night - noite
+girl - garota
+morning - manha
+fish - peixe
+meat - carne
+cock - galo
+evening - tardinha
+dog - cao
+wind - viento
+*/

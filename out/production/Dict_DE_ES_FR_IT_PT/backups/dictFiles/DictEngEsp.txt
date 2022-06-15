@@ -38,3 +38,32 @@ import java.util.HashMap;
 
     }
 
+/*
+bus - autobus
+chicken - pollo
+woman - mujer
+young - joven
+fruit - fruta
+vegetable - verdura
+boy - nino
+bike - bicicleta
+hen - gallina
+noon - mediodia
+car - coche
+duck - pato
+cat - gato
+man - hombre
+rain - lluvia
+old - viejo
+night - noche
+girl - nina
+morning - manana
+fish - pescado
+meat - carne
+cock - gallo
+evening - tarde
+dog - perro
+wind - viento
+*/
+
+

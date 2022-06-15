@@ -37,3 +37,31 @@ import java.util.HashMap;
         }
 
     }
+
+/*
+bus - bus
+chicken - poussin
+woman - femme
+young - jeune
+fruit - fruits
+vegetable - legume
+boy - garcon
+bike - velo
+hen - poule
+noon - midi
+car - voiture
+duck - canard
+cat - chatte
+man - homme
+rain - pluie
+old - vieux
+night - nuit
+girl - fille
+morning - matin
+fish - poisson
+meat - viande
+cock - robinet
+evening - soir
+dog - chien
+wind - vent
+*/

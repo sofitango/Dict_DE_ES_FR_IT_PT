@@ -1,40 +1,65 @@
 package com.company.dicts;
+
+import java.io.*;
 import java.util.HashMap;
 
-    public  class DictEngEsp{
+public class DictEngEsp {
 
-        public static HashMap<String, String> dictEngEsp(){
+    public static HashMap<String, String> dictEngEsp() throws IOException {
 
-            HashMap<String, String> dictEngEsp = new HashMap<>();
+        HashMap<String, String> dictEngEsp = new HashMap<>();
 
-            dictEngEsp.put("cat", "gato");
-            dictEngEsp.put("dog", "perro");
-            dictEngEsp.put("cock", "gallo");
-            dictEngEsp.put("hen", "gallina");
-            dictEngEsp.put("chicken", "pollo");
-            dictEngEsp.put("duck", "pato");
-            dictEngEsp.put("fish", "pescado");
-            dictEngEsp.put("meat", "carne");
-            dictEngEsp.put("vegetable", "verdura");
-            dictEngEsp.put("fruit", "fruta");
-            dictEngEsp.put("man", "hombre");
-            dictEngEsp.put("woman", "mujer");
-            dictEngEsp.put("boy", "nino");
-            dictEngEsp.put("girl", "nina");
-            dictEngEsp.put("young", "joven");
-            dictEngEsp.put("old", "viejo");
-            dictEngEsp.put("bike", "bicicleta");
-            dictEngEsp.put("bus", "autobus");
-            dictEngEsp.put("car", "coche");
-            dictEngEsp.put("morning", "manana");
-            dictEngEsp.put("noon", "mediodia");
-            dictEngEsp.put("evening", "tarde");
-            dictEngEsp.put("night", "noche");
-            dictEngEsp.put("wind", "viento");
-            dictEngEsp.put("rain", "lluvia");
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngEsp.dat");
+        BufferedReader br = new BufferedReader(fr);
 
-            return dictEngEsp;
+        String line = null;
+        while ((line = br.readLine()) != null) {
+
+            String str = line;
+            String[] arrOfStr = str.split(" - ");
+            String wordSrc = arrOfStr[0];
+            String wordDes = arrOfStr[1];
+            System.out.println(wordSrc);
+            System.out.println(wordDes);
+
+            dictEngEsp.put(wordSrc, wordDes);
         }
-
+        br.close();
+        return dictEngEsp;
     }
 
+    public static void dictFileWriter_EngEsp() throws IOException {
+        FileReader fr = new FileReader("src\\com\\company\\dicts\\DictEngEsp.dat");
+        FileWriter fw = new FileWriter("src\\com\\company\\dictFiles\\DictEngEsp.txt");
+        char[] chs = new char[1024];
+        int len = 0;
+        while ((len = fr.read(chs)) != -1) {
+            fw.write(chs, 0, len);
+            fw.flush();
+        }
+        fw.close();
+        fr.close();
+    }
+
+    public static void dictEngEspWriteToDatFile(HashMap<String, String> dictSrcDes) throws IOException {
+
+        FileWriter fw = new FileWriter("src\\com\\company\\dicts\\DictEngEsp.dat");
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        int dictSize = dictSrcDes.size();
+        int counter = 0;
+
+        for(String key : dictSrcDes.keySet()){
+            String value = dictSrcDes.get(key);
+//            System.out.println(key + " - " + value);
+            bw.write(key + " - " + value);
+            if(counter < dictSize-1){
+                bw.newLine();
+            }
+            bw.flush();
+            counter++;
+        }
+        bw.close();
+    }
+
+}

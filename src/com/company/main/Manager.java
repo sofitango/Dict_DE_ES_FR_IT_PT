@@ -47,7 +47,6 @@ public class Manager {
         System.out.print("Please select a language pair or press 6 to quit: ");
 
         try {
-//            ManagerFile.dictFileCreate();
             ManagerFile.dictFileCreator();
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,7 +89,8 @@ public class Manager {
         return dictSrcDes;
     }
 
-    private HashMap<String, String> setLan(int lanSet){
+/*
+    private HashMap<String, String> setLan(int lanSet) throws IOException {
 
         HashMap<String, String> dictSrcDes = new HashMap<>();
 
@@ -110,6 +110,7 @@ public class Manager {
         }
         return dictSrcDes;
     }
+ */
 
     private void mainMenu(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println("= = = = = = = = = = = = = = = = = = = = = = = = =");
@@ -166,7 +167,7 @@ public class Manager {
                 System.out.println("7. (S)howing words in pairs (S)");
                 ListInPairs.dictInPairs(dictSrcDes);
                 System.out.println();
-            } else if(choiceMade.equals("8") || choiceMade.equalsIgnoreCase("E")){
+            } else if(choiceMade.equals("8") || choiceMade.equalsIgnoreCase("V")){
                 System.out.println("8. (V)erify word in flash cards (V)");
                 VerifyAWord.verifyAWord(dictSrcDes);
                 System.out.println();
@@ -175,18 +176,23 @@ public class Manager {
 
                 if(lanChosen == 1){
                     System.out.println("Thanks for using mini-dictionary English - German");
+                    DictEngDeu.dictEngDeuWriteToDatFile(dictSrcDes);
                     ManagerFile.dictFileWriter_EngDeu();
                 } else if(lanChosen == 2){
                     System.out.println("Thanks for using mini-dictionary English - Spanish");
+                    DictEngEsp.dictEngEspWriteToDatFile(dictSrcDes);
                     ManagerFile.dictFileWriter_EngEsp();
                 } else if(lanChosen == 3){
                     System.out.println("Thanks for using mini-dictionary English - French");
+                    DictEngFra.dictEngFraWriteToDatFile(dictSrcDes);
                     ManagerFile.dictFileWriter_EngFra();
                 } else if(lanChosen == 4){
                     System.out.println("Thanks for using mini-dictionary English - Italian");
+                    DictEngIta.dictEngItaWriteToDatFile(dictSrcDes);
                     ManagerFile.dictFileWriter_EngIta();
                 } else if(lanChosen == 5) {
                     System.out.println("Thanks for using mini-dictionary English - Portugese");
+                    DictEngPrt.dictEngPrtWriteToDatFile(dictSrcDes);
                     ManagerFile.dictFileWriter_EngPrt();
                 } else {
                     System.out.println("Something went wrong.");

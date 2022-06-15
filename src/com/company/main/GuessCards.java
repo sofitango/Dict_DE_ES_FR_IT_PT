@@ -1,12 +1,14 @@
 package com.company.main;
 
 import com.company.dicts.*;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class GuessCards{
 
-    public static void guessingCard(HashMap<String, String> dictSrcDes){
+    public static void guessingCard(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println();
         System.out.println("2. (G)uessing a flash card (G)");
 

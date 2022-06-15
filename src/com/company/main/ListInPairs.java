@@ -2,13 +2,14 @@ package com.company.main;
 
 import com.company.dicts.*;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
 
 public class ListInPairs{
 
-    public static void dictInPairs(HashMap<String, String> dictSrcDes){
+    public static void dictInPairs(HashMap<String, String> dictSrcDes) throws IOException {
         System.out.println();
         System.out.println(" Showing words in pairs");
         System.out.println("- - - - - - - - - - - - -");
